@@ -19,6 +19,14 @@ footer {
     align-items: center;
     margin: 1rem 0;
 
+    a {
+        transition: 350ms;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+    }
+
     img {
         height: 75px;
         width: auto;

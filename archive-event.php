@@ -31,13 +31,14 @@
                                 <div class="event-details">
                                     <h3 class="event-title"><?php the_title(); ?></h3>
                                     <p class="event-date">
-                                        <?php echo $start_date; ?>
+                                        <?php echo date("F j, Y", strtotime($start_date)); ?>
                                         <?php if (!$ongoing && $end_date) : ?>
-                                            - <?php echo $end_date; ?>
+                                            - <?php echo date("F j, Y", strtotime($end_date)); ?>
                                         <?php elseif ($ongoing) : ?>
                                             (Ongoing)
                                         <?php endif; ?>
                                     </p>
+
                                 </div>
                             </a>
                         </div>

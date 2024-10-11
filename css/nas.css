@@ -268,6 +268,12 @@ footer .footer-logo img {
   align-items: center;
   margin: 1rem 0;
 }
+.footer-logo-links a {
+  transition: 350ms;
+}
+.footer-logo-links a:hover {
+  transform: translateY(-5px);
+}
 .footer-logo-links img {
   height: 75px;
   width: auto;
@@ -712,43 +718,71 @@ footer .footer-logo img {
   }
 }
 
-.featured-events {
-  padding: 5rem 0;
+.featured-events-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
-.featured-events h2 {
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-}
-.featured-events .carousel-item {
-  background: #f8f8f8;
-  border-radius: 20px;
-  height: 600px;
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out;
-  margin: 10px;
+
+.featured-events-carousel {
   position: relative;
 }
-.featured-events .carousel-item img {
-  border-radius: 20px 20px 0 0;
+.featured-events-carousel .swiper-slide {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.featured-events-carousel .swiper-slide:hover {
+  transform: translateY(-5px);
+}
+.featured-events-carousel .swiper-slide .event-link {
+  text-decoration: none;
+  color: inherit;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+}
+.featured-events-carousel .swiper-slide .event-thumbnail img {
   width: 100%;
   height: 350px;
   object-fit: cover;
+  display: block;
 }
-.featured-events .carousel-item-content {
-  background: #f8f8f8;
-  border-radius: 0 0 20px 20px;
+.featured-events-carousel .swiper-slide .event-details {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
-.featured-events .carousel-item-cta {
-  font-weight: 600;
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
+.featured-events-carousel .swiper-slide .event-details .event-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+  flex-grow: 1;
+}
+.featured-events-carousel .swiper-slide .event-details .event-date {
+  font-size: 1rem;
+  color: #555;
+  background-color: #f0f0f0;
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 20px;
+  margin-top: 10px;
+  font-weight: 500;
+}
+.featured-events-carousel .swiper-button-next, .featured-events-carousel .swiper-button-prev {
   color: #96040D;
 }
-.featured-events .carousel-item:hover {
-  transform: translateY(-5px);
+.featured-events-carousel .swiper-pagination-bullet {
+  background-color: #96040D;
+}
+.featured-events-carousel .swiper-pagination-bullet-active {
+  background-color: #96040D;
 }
 
 .bento-grid-container {

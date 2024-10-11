@@ -32,6 +32,40 @@ jQuery(document).ready(function($) {
         ]
     });
 
+    // Initialize Swiper
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        centerMode: true,
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+        }
+    });
+
     // Initialize Fancybox for images
     $('.bento-item a.lightbox').fancybox({
         buttons: ['close'],
@@ -77,16 +111,16 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('Console message from line 15 after burger menu');
 
     // Banner Swiper
-    const swiper = new Swiper('.bannerSwiper', {
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: true,
-        },
-        speed: 5000,
-        animation: true,
-        effect: 'fade',
-        loop: true,
-    });
+    // const swiper = new Swiper('.bannerSwiper', {
+    //     autoplay: {
+    //         delay: 2500,
+    //         disableOnInteraction: true,
+    //     },
+    //     speed: 5000,
+    //     animation: true,
+    //     effect: 'fade',
+    //     loop: true,
+    // });
 
 
 
