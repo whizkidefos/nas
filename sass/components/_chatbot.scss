@@ -1,0 +1,97 @@
+#chatbot-container {
+    width: 300px;
+    height: 500px;
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    display: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    //overflow-y: scroll;
+}
+
+#chatbox-header {
+    padding: 10px;
+    background-color: $nasRed;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chatbot-icon {
+    position: fixed;
+    bottom: 10px;
+    right: 30px;
+    font-size: 30px;
+    background-color: $nasRed;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: darken($nasRed, 10%);
+        color: $nasYellow;
+        transform: translateY(-5px);
+    }
+}
+
+#default-questions {
+    border-radius: $borderRadius;
+    padding: 10px;
+}
+
+.input-response-box {
+    padding: 10px;
+}
+
+.chatbot-question {
+    background-color: #f8f9fa;
+    border: 1px solid $nasYellow;
+    padding: 10px;
+    width: 90%;
+    border-radius: 4px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+#default-questions button {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border-radius: 4px;
+}
+
+#chatbot-response {
+    font-size: 14px;
+    padding: 10px;
+    min-height: 50px;
+}
+
+#send-btn {
+    background-color: $nasRed;
+    color: white;
+    padding: 5px;
+    border: 1px solid $nasRed;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}

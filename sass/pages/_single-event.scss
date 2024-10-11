@@ -1,0 +1,39 @@
+.single-event {
+    background: $nasWhite;
+    padding: 3rem 0;
+
+    img {
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+    }
+
+    .single-event-content {
+        background: #fff;
+        padding: 20px;
+        margin-top: 30px;
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        h5 {
+            color: $nasRed;
+            margin: 0;
+        }
+
+        a {
+            color: $nasRed;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+
+            &:hover {
+                color: darken($nasRed, 10%);
+                text-decoration: underline;
+            }
+        }
+    }
+}

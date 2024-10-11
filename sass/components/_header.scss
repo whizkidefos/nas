@@ -1,0 +1,173 @@
+/* ===================== Header CSS ===================== */
+.main-header {
+    background-color: $nasRed;
+    color: $nasWhite;
+    box-shadow: $boxShadow;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    height: 80px;
+
+    // Burger Icon
+    .burger {
+        position: fixed;
+        top: 3rem;
+        right: 30px;
+        width: 35px;
+        height: 30px;
+        cursor: pointer;
+        transition: all 500ms ease-in-out;
+        z-index: 20;
+
+    }
+
+    .burger-bar {
+        background-color: $nasWhite;
+        display: block;
+        width: 100%;
+        height: 3px;
+        border-radius: 2px;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: $nasWhite;
+            border-radius: 3px;
+            transition: all 500ms ease-in-out;
+        }
+
+        &::before {
+            transform: translateY(-10px);
+        }
+
+        &::after {
+            transform: translateY(10px);
+        }
+    }
+
+    .burger.open .burger-bar {
+        background: transparent;
+    }
+
+    .burger.open .burger-bar::before {
+        transform: rotate(45deg);
+        background: $nasYellow;
+    }
+
+    .burger.open .burger-bar::after {
+        transform: rotate(-45deg);
+        background: $nasYellow;
+    }
+}
+
+.nav-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1300px;
+    width: 95%;
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+       
+    }
+
+    img {
+        width: 175px;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @media (max-width: 768px) {
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-left: 1rem;
+
+            a {
+                color: $nasWhite;
+                font-size: 14px;
+                text-transform: uppercase;
+                text-decoration: none;
+
+                &:hover {
+                    color: $nasYellow;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 802px) {
+    .mobile-navigation {
+        display: none;
+    }
+
+    .desktop-cta {
+        display: block;
+    }
+
+    .desktop-navigation {
+        display: flex;
+    }
+
+    .burger {
+        display: none;
+    }
+}
+
+@media (max-width: 802px) {
+    .desktop-navigation,
+    .desktop-cta {
+        display: none;
+    }
+
+    .mobile-navigation {
+        background: $nasRed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        position: fixed;
+        top: 80px;
+        right: -310px;
+        width: 300px;
+        height: 100vh;
+        z-index: 10;
+        transition: all 500ms ease-in-out;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 10rem;
+            margin-bottom: 2rem;
+
+            li {
+                margin: 25px 0;
+            }
+        }
+    }
+
+    .mobile-navigation.open {
+        right: 0;
+    }
+
+    .burger {
+        display: block;
+    }
+}

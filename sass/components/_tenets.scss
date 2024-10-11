@@ -1,0 +1,14 @@
+.tenets {
+    margin-top: -80px;
+    position: relative;
+    z-index: 1;
+}
+
+.tenet-block {
+    border-radius: 10px;
+
+    svg {
+        color: $nasRed;
+    }
+}
+

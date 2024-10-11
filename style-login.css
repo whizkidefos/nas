@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,900&display=swap');
+
+*, *::before, *::after {
+    color: #96040D;
+    font-family: 'Poppins', sans-serif;
+}
+
+a {
+    color: #96040D;
+}
+
+body.login div#login form#loginform p.forgetmenot {}
+
+body.login div#login form#loginform p.forgetmenot input#rememberme {}
+
+body.login div#login form#loginform input {
+    border-radius: 30px;
+    color: #96040D;
+    font-weight: 500;
+    padding: 0 10px;
+}
+
+body.login div#login form#loginform p.submit {
+    background: #96040D;
+    border-radius: 20px;
+    color: aliceblue;
+}
+
+body.login div#login form#loginform p.submit input#wp-submit {
+    background: #96040D;
+    border-radius: 30px;
+    color: aliceblue;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 6px;
+    font-weight: 600;
+}
+
+.wp-core-ui .button-group.button-large .button, .wp-core-ui .button.button-large {
+    background: #96040D;
+    border-radius: 30px;
+    color: aliceblue;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 6px;
+    font-weight: 600;
+}
+
+.login form .input, .login input[type=password], .login input[type=text] {
+    border-radius: 30px;
+}
+
+#language-switcher {
+    display: none;
+}

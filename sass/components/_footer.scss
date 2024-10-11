@@ -1,0 +1,27 @@
+/*================== Footer CSS ===================== */
+
+footer {
+    background-color: $nasWhite;
+    border-top: 1px solid #ddd;
+    color: #666;
+    padding: 1rem;
+    text-align: center;
+
+    .footer-logo img {
+        width: 200px;
+    }
+}
+
+.footer-logo-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+
+    img {
+        height: 75px;
+        width: auto;
+        margin: 0 0.5rem;
+    }
+}

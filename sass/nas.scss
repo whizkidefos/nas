@@ -1,0 +1,92 @@
+$red: #E30513;
+$nasRed: #96040D;
+$nasYellow: #FFDD00;
+$nasPurple: #6E358B;
+$nasBlack: #1C1C1B;
+$black: #000000;
+$nasWhite: #f8f8f8;
+$boxShadow: 0 3px 9px #0000001a;
+$borderRadius: 30px;
+
+html, body {
+    font-family: "Inter", sans-serif;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Lora", serif;
+}
+
+.main-website-content {
+    padding-top: 80px;
+}
+
+.nas-btn {
+    background-color: $nasRed;
+    color: $nasWhite;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid $nasRed;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    
+    &:hover {
+        background-color: darken($nasRed, 10%);
+        color: $nasYellow;
+        text-decoration: none;
+    }
+}
+
+.nas-btn-yellow {
+    background-color: $nasYellow;
+    color: $nasRed;
+    padding: 10px 25px;
+    border: 2px solid $nasYellow;
+    border-radius: $borderRadius;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    
+    &:hover {
+        background-color: transparent;
+        color: $nasYellow;
+        text-decoration: none;
+    }
+}
+
+.nas-cta {
+    background-color: $nasRed;
+    color: $nasWhite;
+    display: inline-block;
+    padding: 5px 10px;
+    border: 2px solid $nasRed;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    
+    &:hover {
+        background-color: darken($nasRed, 10%);
+        color: $nasYellow;
+        text-decoration: none;
+    }
+}
+
+
+@import 'components/header';
+@import 'components/header-front';
+@import 'components/footer';
+@import 'components/banner';
+@import 'components/tenets';
+@import 'components/intro';
+@import 'components/homepage-banner';
+@import 'components/chatbot';
+@import 'components/alt-banner';
+@import 'components/philosophy';
+@import 'components/our-impact-in-numbers';
+@import 'components/join-cta';
+@import 'components/featured-events';
+
+@import 'pages/about';
+@import 'pages/single-event';
