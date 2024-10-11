@@ -31,6 +31,24 @@ jQuery(document).ready(function($) {
             }
         ]
     });
+
+    // Initialize Fancybox for images
+    $('.bento-item a.lightbox').fancybox({
+        buttons: ['close'],
+        loop: true,
+        protect: true,
+    });
+
+    // Initialize Fancybox for videos (YouTube/Vimeo)
+    $('[data-fancybox]').fancybox({
+        type: 'iframe',
+        iframe: {
+            css: {
+                width: '80%',
+                height: '80%',
+            }
+        }
+    });
 });
 
 console.log('Console message from line 13 after sleek slider');

@@ -51,6 +51,82 @@ function register_event_post_type() {
 }
 add_action('init', 'register_event_post_type');
 
+// Register Video Post Type
+function register_video_post_type() {
+    $labels = array(
+        'name'               => 'Videos',
+        'singular_name'      => 'Video',
+        'menu_name'          => 'Videos',
+        'add_new'            => 'Add New',
+        'add_new_item'       => 'Add New Video',
+        'edit_item'          => 'Edit Video',
+        'new_item'           => 'New Video',
+        'view_item'          => 'View Video',
+        'all_items'          => 'All Videos',
+        'search_items'       => 'Search Videos',
+        'not_found'          => 'No videos found.',
+        'not_found_in_trash' => 'No videos found in Trash.'
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable'  => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array('slug' => 'videos'),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 20,
+        'menu_icon'          => 'dashicons-video-alt3', // Suitable Dashicon
+        'supports'           => array('title', 'editor', 'thumbnail'),
+        'show_in_rest'       => true,
+    );
+
+    register_post_type('video', $args);
+}
+add_action('init', 'register_video_post_type');
+
+// Register Photo Gallery Post Type
+function register_photo_gallery_post_type() {
+    $labels = array(
+        'name'               => 'Photo Galleries',
+        'singular_name'      => 'Photo Gallery',
+        'menu_name'          => 'Photo Gallery',
+        'add_new'            => 'Add New',
+        'add_new_item'       => 'Add New Gallery',
+        'edit_item'          => 'Edit Gallery',
+        'new_item'           => 'New Gallery',
+        'view_item'          => 'View Gallery',
+        'all_items'          => 'All Galleries',
+        'search_items'       => 'Search Galleries',
+        'not_found'          => 'No galleries found.',
+        'not_found_in_trash' => 'No galleries found in Trash.'
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable'  => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array('slug' => 'photo-gallery'),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'menu_position'      => 21,
+        'menu_icon'          => 'dashicons-format-gallery', // Suitable Dashicon
+        'supports'           => array('title', 'editor', 'thumbnail'),
+        'show_in_rest'       => true,
+    );
+
+    register_post_type('photo_gallery', $args);
+}
+add_action('init', 'register_photo_gallery_post_type');
+
 // Add meta box
 function add_event_meta_boxes() {
     add_meta_box('event_details', 'Event Details', 'event_details_callback', 'event', 'normal', 'high');
@@ -104,3 +180,27 @@ function save_event_meta_box_data($post_id) {
     }
 }
 add_action('save_post', 'save_event_meta_box_data');
+
+// Add meta box for video URL
+function add_video_meta_box() {
+    add_meta_box('video_url', 'Video URL', 'video_meta_box_callback', 'video', 'normal', 'high');
+}
+add_action('add_meta_boxes', 'add_video_meta_box');
+
+function video_meta_box_callback($post) {
+    $video_url = get_post_meta($post->ID, '_video_url', true);
+    ?>
+    <p>
+        <label for="video_url">YouTube or Vimeo URL:</label>
+        <input type="url" id="video_url" name="video_url" value="<?php echo esc_attr($video_url); ?>" style="width:100%;" />
+    </p>
+    <?php
+}
+
+// Save video URL
+function save_video_url_meta($post_id) {
+    if (array_key_exists('video_url', $_POST)) {
+        update_post_meta($post_id, '_video_url', sanitize_text_field($_POST['video_url']));
+    }
+}
+add_action('save_post', 'save_video_url_meta');

@@ -1,0 +1,87 @@
+section.single-post {
+    background: $nasWhite;
+}
+
+.single-post-container {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 20px;
+    background: #fff;
+  
+    .post-thumbnail-container {
+      position: relative;
+      margin-bottom: 20px;
+  
+      .post-thumbnail img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+  
+      .post-category {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+  
+        .category-button {
+          background-color: $nasRed;
+          color: white;
+          padding: 10px 15px;
+          border-radius: 20px;
+          font-size: 0.9rem;
+          text-decoration: none;
+          font-weight: 600;
+          transition: background-color 0.3s ease-in-out;
+  
+          &:hover {
+            background-color: darken($nasRed, 10%);
+            text-decoration: none;
+            color: $nasYellow;
+          }
+        }
+      }
+    }
+  
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+  
+    .post-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    a {
+        color: $nasRed;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+            color: darken($nasRed, 10%);
+            text-decoration: none;
+        }
+    }
+  
+    .post-meta {
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+  
+    .post-navigation {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+  
+    .comments-section {
+      margin-top: 40px;
+    }
+  }
+  
