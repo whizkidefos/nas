@@ -1,0 +1,61 @@
+.countries {
+    padding: 5rem 0;
+}
+
+.continent-box {
+    background: $nasRed;
+    border-radius: 10px;
+    color: $nasWhite;
+    padding: 40px 20px; 
+
+    h2 {
+        color: $nasWhite;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+}
+
+// NAS HQs
+.hqs {
+    background: $nasWhite;
+    padding: 3rem 0;
+
+    header {
+        background: $nasRed;
+        color: $nasWhite;
+        padding: 50px 20px;
+
+        h1 {
+            color: $nasWhite;
+            font-size: 2.5rem;
+        }
+
+        p {
+            color: $nasWhite;
+            font-size: 1.3rem;
+
+            span:before {
+                content: '\2022';
+                color: $nasYellow;
+                margin: 0 10px 0 0;
+            }
+        }
+    }
+}
+
+.hqs-content,
+.hq-related-posts {
+    background: #fff;
+    padding: 30px 20px;
+    margin: 20px 0;
+
+    a {
+        color: $nasRed;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
+            color: darken($nasRed, 10%);
+        }
+    }
+}

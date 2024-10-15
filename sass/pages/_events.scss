@@ -25,6 +25,24 @@
             color: $nasYellow;
         }
     }
+
+    .event-dates {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        background-color: $nasRed;
+        color: $nasWhite;
+        padding: 10px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+
+        small {
+            color: $nasWhite;
+            font-size: x-small;
+            font-weight: 400;
+        }
+    }
 }
 
 .single-event {

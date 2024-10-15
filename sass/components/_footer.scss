@@ -33,3 +33,18 @@ footer {
         margin: 0 0.5rem;
     }
 }
+
+.footer-socials {
+    margin-top: 15px;
+    a {
+        color: $nasBlack;
+        font-size: 1.5rem;
+        margin: 0 10px;
+        transition: 350ms;
+
+        &:hover {
+            color: $nasRed;
+            text-decoration: none;
+        }
+    }
+}

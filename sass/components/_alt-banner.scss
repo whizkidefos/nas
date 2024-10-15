@@ -1,10 +1,11 @@
 .nas-intro {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/nas-slide-00.jpg') no-repeat center center/cover;
     width: 100%;
     height: 100vh;
     position: relative;
     z-index: -1;
     background-attachment: fixed;
+    animation: slideshow 12s infinite;
+    transition: all 500ms;
 
     &-content {
         margin-top: 16rem;
@@ -25,8 +26,24 @@
         }
 
         h5 {
-            color: $nasWhite;
+            color: $nasYellow;
             margin: 0;
+            letter-spacing: 7px;
+        }
+
+        .subtitle {
+            background: $nasBlack;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $nasRed;
+            position: absolute;
+            left: 0;
+            top: 30px;
+            transform: rotate(-30deg);
         }
 
         .typewriter-container {
@@ -43,6 +60,16 @@
             padding-right: 5px;
             white-space: nowrap;
             overflow: hidden; /* Ensures text is hidden until typed */
+
+            span::before {
+                content: '•';
+                color: $nasYellow;
+                margin-right: 0.5rem;  
+            }
+
+            @media (max-width: 768px) {
+                font-size: 1.2rem;
+            }
         }
         
         @keyframes blink {
@@ -92,3 +119,22 @@
     }
 }
 
+
+/* Keyframes for the slideshow */
+@keyframes slideshow {
+    0% {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/nas-slide-00.jpg') no-repeat center center/cover;
+        opacity: 1;
+    }
+   
+    50% {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/original-7-hero.jpg') no-repeat center center/cover;
+        opacity: 1;
+    }
+    
+    100% {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/nas-slide-02.jpg') no-repeat center center/cover;
+        opacity: 1;
+    }
+    
+}

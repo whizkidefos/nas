@@ -1,5 +1,5 @@
 .philosophy-section {
-    padding: 5rem 0;
+    padding: 6rem 0;
 }
 
 .philosophy {
@@ -27,5 +27,22 @@
         p {
             margin-top: 0;
         }
+    }
+}
+
+.intro-history {
+    position: relative;
+
+    p {
+        font-size: 1.8rem;
+    }
+
+    svg {
+        color: $nasRed;
+        font-size: 2rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        
     }
 }

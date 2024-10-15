@@ -1,0 +1,32 @@
+.breadcrumbs {
+    margin: 20px 0;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    color: #333;
+  
+    a {
+      color: $nasRed;
+      text-decoration: none;
+      transition: color 0.3s ease;
+  
+      &:hover {
+        color: darken($nasRed, 10%);
+      }
+    }
+  
+    span {
+      font-weight: 600;
+      color: #555;
+    }
+  
+    /* Separator styling */
+    // &::before {
+    //   content: '';
+    //   display: inline-block;
+    //   margin-right: 10px;
+    //   height: 1px;
+    //   background-color: #ddd;
+    //   vertical-align: middle;
+    // }
+  }
+  

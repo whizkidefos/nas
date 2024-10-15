@@ -1,0 +1,83 @@
+.skull-and-xbones {
+    padding: 3rem 0;
+}
+
+.xbones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .left {
+        width: 25%;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            order: 2;
+        }
+    }
+
+    .illustration {
+        width: 50%;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            order: 1;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+
+            @media (max-width: 768px) {
+                width: 80%;
+                margin: auto;
+            }
+        }
+    }
+
+    .right {
+        width: 25%;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            order: 3;
+        }
+    }
+}
+
+.xbones-text-block {
+    margin: 2rem 0;
+    padding: 20px;
+
+    @media (max-width: 768px) {
+        margin: 0;
+    }
+
+    h5 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0;
+
+        width: 30px;
+        height: 30px;
+        background-color: $nasRed;
+        color: $nasWhite;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        padding: 5px;
+    }
+
+    h3 {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    p {
+        font-size: 14px;
+        margin: 0;
+    }
+}

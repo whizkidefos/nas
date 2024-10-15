@@ -1,19 +1,20 @@
 <section class="nas-intro">
     <div class="uk-container">
         <div class="nas-intro-content">
-            <!-- <h5>This is the</h5> -->
+            <h5>Pyrates Confraternity</h5>
             <h1>National Association of Seadogs</h1>
             <div class="typewriter-container">
                 <h2 class="typewriter-title">
                     <span id="typewriter"></span>
                 </h2>
             </div>
-            <p class="compass-points">
+            <!-- <p class="subtitle">the</p> -->
+            <!-- <p class="compass-points">
                 <span>Against Moribund Convention</span>
                 <span>Against Tribalism</span>
                 <span>For Humanistic Ideals</span>
                 <span>For Comradeship & Chivalry</span>
-            </p>
+            </p> -->
 
             
             <!-- <div class="compass-points">

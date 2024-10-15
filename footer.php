@@ -5,6 +5,14 @@
         <div class="logo-wrapper">
             <a href="/" class="footer-logo"><img src="<?php echo get_template_directory_uri() . "/images/nas-centered-logo-dark.png" ?>" alt="NAS logo"></a>
         </div>
+
+        <div class="footer-socials">
+            <a href="https://www.facebook.com/NASPC1952" target="_blank">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://x.com/NASPC1952" target="_blank">
+                <i class="fa-brands fa-x-twitter"></i>
+        </div>
         
         <div class="footer-logo-links">
             <a href="" target="_blank" class="footer-image-link">

@@ -1,45 +1,14 @@
-// Sleek Slider
 jQuery(document).ready(function($) {
-    $('.events-carousel').slick({
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        dots: true,
-        arrows: true,
-        // centerMode: true,
-        // centerPadding: '20px',
-        responsive: [
-            {
-              breakpoint: 768,
-              settings: {
-                arrows: false,
-                centerMode: true,
-                centerPadding: '40px',
-                slidesToShow: 2
-              }
-            },
-            {
-              breakpoint: 480,
-              settings: {
-                arrows: false,
-                centerMode: true,
-                centerPadding: '40px',
-                slidesToShow: 1
-              }
-            }
-        ]
-    });
 
     // Initialize Swiper
-    var swiper = new Swiper('.swiper-container', {
+    var featuredEvents = new Swiper('.events-container', {
         slidesPerView: 1,
         spaceBetween: 30,
         centerMode: true,
         loop: true,
+        speed: 2000,
         autoplay: {
-            delay: 2500,
+            delay: 5000,
             disableOnInteraction: false,
         },
         pagination: {
@@ -83,16 +52,111 @@ jQuery(document).ready(function($) {
             }
         }
     });
-});
 
-console.log('Console message from line 13 after sleek slider');
+    // Function to count up
+    function countUp() {
+        $('.counter').each(function() {
+            var $this = $(this),
+                target = parseInt($this.attr('data-target')),
+                count = 0,
+                increment = target / 100;  // The larger the divisor, the slower the count-up
+
+            // Animate the counter
+            var interval = setInterval(function() {
+                count += increment;
+                if (count >= target) {
+                    count = target;
+                    clearInterval(interval);
+                }
+                $this.text(Math.ceil(count));  // Update the displayed number
+            }, 30);  // Adjust the speed of the count-up (smaller = faster)
+        });
+    }
+
+    // Function to detect if elements are visible in the viewport
+    function isScrolledIntoView(elem) {
+        var docViewTop = $(window).scrollTop(),
+            docViewBottom = docViewTop + $(window).height(),
+            elemTop = $(elem).offset().top,
+            elemBottom = elemTop + $(elem).height();
+
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    }
+
+    // Trigger count-up when the counter comes into view
+    $(window).on('scroll', function() {
+        $('.counter').each(function() {
+            if (isScrolledIntoView(this)) {
+                countUp();
+            }
+        });
+    });
+
+    // Also trigger count-up on page load if counter is already in view
+    $(window).on('load', function() {
+        $('.counter').each(function() {
+            if (isScrolledIntoView(this)) {
+                countUp();
+            }
+        });
+    });
+
+    // Typeewriter effect
+    var phrases = ["Against Moribund Convention", "Against Tribalism", "For Humanistic Ideals", "For Comradeship & Chivalry"];
+    var typingSpeed = 100; // Speed of typing (in milliseconds)
+    var deletingSpeed = 50; // Speed of deleting (in milliseconds)
+    var delayBetweenPhrases = 2000; // Delay between phrases (in milliseconds)
+    var currentPhraseIndex = 0;
+    var charIndex = 0;
+    var isDeleting = false;
+
+    function type() {
+        var currentPhrase = phrases[currentPhraseIndex];
+        var typewriterElement = $('#typewriter');
+        
+        if (isDeleting) {
+            // Deleting characters
+            typewriterElement.text(currentPhrase.substring(0, charIndex - 1));
+            charIndex--;
+        } else {
+            // Typing characters
+            typewriterElement.text(currentPhrase.substring(0, charIndex + 1));
+            charIndex++;
+        }
+
+        // If the word is fully typed, wait and then start deleting
+        if (!isDeleting && charIndex === currentPhrase.length) {
+            isDeleting = true;
+            setTimeout(type, delayBetweenPhrases); // Pause before deleting
+        }
+        // If the word is fully deleted, move to the next phrase
+        else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length; // Loop through phrases
+            setTimeout(type, 500); // Start typing the next phrase
+        } else {
+            setTimeout(type, isDeleting ? deletingSpeed : typingSpeed); // Adjust speed
+        }
+    }
+
+    // Start typing when the page is ready
+    type();
+
+    // Mobile navigation
+    $('.mobile-toggle').click(function() {
+        $('.alt-mobile-navigation').toggleClass('open');
+        $(this).toggleClass('open');
+    });
+    // $('.alt-mobile-navigation .fa-xmark').click(function() {
+    //     $('.alt-mobile-navigation').removeClass('open');
+    //     $(this).removeClass('open');
+    // });
+});
 
 document.addEventListener('DOMContentLoaded', function () {
 
     const burger = document.querySelector('.burger');
     const menu = document.querySelector('.mobile-navigation');
-
-    console.log('Console message from line 2 before burger menu');
 
     //Navigation
     let menuOpen = false;
@@ -107,20 +171,6 @@ document.addEventListener('DOMContentLoaded', function () {
             menu.classList.remove('open');
         }
     });
-
-    console.log('Console message from line 15 after burger menu');
-
-    // Banner Swiper
-    // const swiper = new Swiper('.bannerSwiper', {
-    //     autoplay: {
-    //         delay: 2500,
-    //         disableOnInteraction: true,
-    //     },
-    //     speed: 5000,
-    //     animation: true,
-    //     effect: 'fade',
-    //     loop: true,
-    // });
 
 
 
@@ -137,77 +187,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const targetId = this.getAttribute('data-target');
             document.getElementById(targetId).classList.add('active');
         });
-    });
-
-    // ---- TYPEWRITER EFFECT ----
-    const titles = ["Innovators", "Leaders", "Thinkers", "Changemakers"]; // Text to rotate
-    let currentTitleIndex = 0;
-    let charIndex = 0;
-    const typewriterElement = document.getElementById("typewriter");
-    const typingSpeed = 100;
-    const deletingSpeed = 50;
-    const delayBetweenTitles = 2000;
-
-    function typeTitle() {
-        const currentTitle = titles[currentTitleIndex];
-        
-        if (charIndex < currentTitle.length) {
-            typewriterElement.textContent += currentTitle.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeTitle, typingSpeed); // Type next character
-        } else {
-            setTimeout(deleteTitle, delayBetweenTitles); // After typing, wait before deleting
-        }
-    }
-
-    function deleteTitle() {
-        const currentTitle = titles[currentTitleIndex];
-        
-        if (charIndex > 0) {
-            typewriterElement.textContent = currentTitle.substring(0, charIndex - 1);
-            charIndex--;
-            setTimeout(deleteTitle, deletingSpeed); // Delete next character
-        } else {
-            currentTitleIndex = (currentTitleIndex + 1) % titles.length; // Move to the next title
-            setTimeout(typeTitle, 500); // Start typing the next title after deleting
-        }
-    }
-
-    // Start the typewriter effect
-    typeTitle();
-
-    // ---- COUNT-UP FUNCTIONALITY ----
-    const counters = document.querySelectorAll('.number');
-    const speed = 200; // Adjust the speed of the count-up
-
-    counters.forEach(counter => {
-        const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
-            const increment = target / speed;
-
-            if (count < target) {
-                counter.innerText = Math.ceil(count + increment);
-                setTimeout(updateCount, 20);
-            } else {
-                counter.innerText = target;
-            }
-        };
-
-        const startCounting = (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    updateCount();
-                    observer.unobserve(counter); // Stop observing after counting finishes
-                }
-            });
-        };
-
-        const observer = new IntersectionObserver(startCounting, {
-            threshold: 0.5 // 50% of the section needs to be visible
-        });
-
-        observer.observe(counter);
     });
 
 });

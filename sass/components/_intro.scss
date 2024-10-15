@@ -1,3 +1,45 @@
 .intro {
     padding: 5rem 0;
+
+    &-block {
+        display: flex;
+        align-items: center;
+
+        @media (max-width: 960px) {
+            flex-direction: column;
+        }
+
+        article {
+            width: 30%;
+
+            @media (max-width: 960px) {
+                width: 100%;
+            }
+
+            h2 {
+                color: $nasRed;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+
+        figure {
+            width: 70%;
+            margin-left: 2rem;
+
+            @media (max-width: 960px) {
+                width: 100%;
+                margin-left: unset;
+            }
+
+            img {
+                width: 100%;
+                border-right: 30px solid $nasRed;
+            }
+        }
+    }
 }

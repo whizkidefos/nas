@@ -43,25 +43,30 @@
 //     }
 // }
 
-// .featured-events-carousel
-.featured-events-container {
-    max-width: 1200px;  // Adjust width as needed
-    margin: 0 auto;  // Center the container
-    padding: 40px 20px;
+.featured-events-section {
+    background: $nasWhite;
+    padding: 5rem 0;
+  
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
   }
   
-  .featured-events-carousel {
+  .events-container {
     position: relative;
+    width: 100%;
+    margin: auto;
   
-    .swiper-slide {
+    .event-slide {
       background-color: #fff;
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease-in-out;
-      display: flex;  // Use Flexbox
-      flex-direction: column;  // Align items vertically
-      justify-content: space-between;  // Ensure content is spaced properly
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
   
       &:hover {
         transform: translateY(-5px);
@@ -77,7 +82,7 @@
   
       .event-thumbnail img {
         width: 100%;
-        height: 350px;
+        height: 300px;
         object-fit: cover;
         display: block;
       }
@@ -89,9 +94,9 @@
         flex-grow: 1;  // Ensures equal height for event details section
   
         .event-title {
-          font-size: 1.5rem;
+          font-size: 1.2rem;
           margin-bottom: 10px;
-          color: #333;
+          color: $nasBlack;
           flex-grow: 1;  // Ensure title area expands to fill space
         }
   
@@ -107,9 +112,26 @@
         }
       }
     }
+
+    .swiper-button-next:after, .swiper-button-prev:after {
+      display: none;
+    }
   
     .swiper-button-next, .swiper-button-prev {
-      color: $nasRed;
+      color: $nasWhite;
+      font-size: 15px;
+      width: 40px;
+      height: 40px;
+      background-color: $nasRed;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+      svg {
+        width: 15px;
+      }
     }
   
     .swiper-pagination-bullet {

@@ -3,8 +3,7 @@ section.single-post {
 }
 
 .single-post-container {
-    max-width: 960px;
-    margin: 2rem auto;
+    margin-top: 2rem;
     padding: 20px;
     background: #fff;
   
@@ -83,5 +82,81 @@ section.single-post {
     .comments-section {
       margin-top: 40px;
     }
+}
+
+
+.sidebar {
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 2rem;
   }
   
+  .sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    position: relative;
+  
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: $nasRed;
+      margin-top: 10px;
+    }
+  }
+  
+  /* Recent Posts Section */
+  .recent-posts ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .recent-posts li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .recent-posts li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+  
+  .recent-posts .thumbnail {
+    margin-right: 10px;
+  }
+  
+  .recent-posts .thumbnail img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  /* Category List Section */
+  .category-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .category-list li {
+    margin-bottom: 10px;
+  }
+  
+  .category-list li a {
+    color: $nasRed;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  
+    &:hover {
+      color: $nasRed;
+    }
+}
