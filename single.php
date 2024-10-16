@@ -26,6 +26,8 @@
                                 </div>
                             </div>
 
+                            <?php get_template_part('components/social-share'); ?>
+
                             <h1><?php the_title(); ?></h1>
 
                             <div class="post-content">
