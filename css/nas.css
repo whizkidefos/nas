@@ -292,7 +292,7 @@ h1, h2, h3, h4, h5, h6 {
     background: #1C1C1B;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     padding: 75px 20px;
     position: absolute;
@@ -303,6 +303,9 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     transition: all 0.3s ease-in-out;
     z-index: 20;
+  }
+  .alt-mobile-navigation .cta {
+    display: block;
   }
   .alt-mobile-navigation.open {
     right: 0;
@@ -1863,4 +1866,73 @@ section.single-post {
 }
 .contact-page .map-box {
   border: 10px solid #f8f8f8;
+}
+
+.enrolment-page-header {
+  background: #96040D;
+  height: 650px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.enrolment-page-header article {
+  border-radius: 100%;
+  background: black;
+  color: #f8f8f8;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.enrolment-page-header .hashtag {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.enrolment-page {
+  padding: 3rem 0;
+}
+.enrolment-page iframe {
+  border: 10px solid #96040D;
+  width: 100%;
+  height: 550px;
+}
+
+.ff-default .ff-btn-secondary:not(.ff_btn_no_style) {
+  background-color: #96040D !important;
+  border: none !important;
+  border-radius: 30px !important;
+  color: #fff !important;
+  padding: 10px 20px !important;
+  cursor: pointer !important;
+}
+.ff-default .ff-btn-secondary:not(.ff_btn_no_style):hover {
+  background-color: #640309 !important;
+  color: #FFDD00 !important;
+  transition: 350ms !important;
+}
+
+.fluentform .ff-step-titles li.ff_active:before, .fluentform .ff-step-titles li.ff_completed:before {
+  background: #96040D !important;
+  border: 1px solid transparent !important;
+  color: #fff !important;
+  border-radius: 30px !important;
+}
+
+.fluentform .ff-step-titles li.ff_active:after, .fluentform .ff-step-titles li.ff_completed:after {
+  background: #96040D !important;
+}
+
+.fluentform .ff-step-titles li.ff_active, .fluentform .ff-step-titles li.ff_completed {
+  color: #96040D !important;
+}
+
+.default-page {
+  background-color: #f0f0f0;
+  padding: 5rem 0;
 }

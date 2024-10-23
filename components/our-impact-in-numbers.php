@@ -1,6 +1,6 @@
 <section id="impact-numbers" class="impact-section">
     <div class="uk-container">
-        <h2 class="section-title">Our Impact in counters</h2>
+        <h2 class="section-title">Our Impact in numbers</h2>
         <div class="impact-grid">
             <div class="impact-item">
                 <div class="counter" data-target="72">0</div>
