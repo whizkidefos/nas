@@ -1,5 +1,5 @@
 #chatbot-container {
-    width: 300px;
+    width: 400px;
     height: 500px;
     position: fixed;
     bottom: 0;
@@ -9,7 +9,11 @@
     display: none;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-    //overflow-y: scroll;
+    z-index: 10;
+    
+    @media (max-width: 768px) {
+        width: 300px;
+    }
 }
 
 #chatbox-header {

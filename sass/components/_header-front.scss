@@ -74,20 +74,19 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        padding: 75px 20px;
+        padding: 40px 20px;
 
         position: absolute;
         top: 0;
         right: -350px;
         width: 300px;
-        height: auto;
+        height: 100vh;
         overflow: hidden;
         transition: all 0.3s ease-in-out;
         z-index: 20;
 
         .cta {
-            display: block;
+            margin-top: 40px;
         }
 
         &.open {
@@ -103,10 +102,6 @@
             li {
                 margin: 30px 0;
             }
-        }
-
-        .cta {
-            margin-top: 30px;
         }
 
         svg {

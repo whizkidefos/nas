@@ -106,7 +106,7 @@ function search_knowledge_base($query) {
         return $response;
     } else {
         // Fallback: no direct match found
-        return 'I\'m not sure about that. Could you provide more details or try asking differently?';
+        return `I'm not sure about that. Could you provide more details or try asking differently?`;
     }
 }
 

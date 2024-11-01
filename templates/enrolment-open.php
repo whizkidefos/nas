@@ -10,7 +10,7 @@ get_header();
 <header class="enrolment-page-header">
     <div class="enrolment-page-header-content">
         <article>
-            Have you identified the constraints militating against the attainment of a just society?
+            <h4>Have you identified the constraints militating against the attainment of a just society?</h4>
         </article>
         <div class="hashtag">
             <a href="/membership-application" class="nas-btn-yellow">#JoinHandsWithLikeMinds</a>

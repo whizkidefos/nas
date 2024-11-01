@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php get_template_part('components/intro'); ?>
+
 <section id="about-tabs" class="tabs-section">
     <div class="uk-container">
         <!-- Tab Navigation -->

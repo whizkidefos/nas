@@ -14,11 +14,15 @@ get_header();
         <header class="hqs-header">
             <h1><?php the_title(); ?></h1>
             <p class="hqs-countries">
-                <span>Nigeria</span>
-                <span>South Africa</span>
+                <span>
+                    <?php if ( $countries_in_this_region = get_field( 'countries_in_this_region' ) ) : ?>
+                        <?php echo esc_html( $countries_in_this_region ); ?>
+                    <?php endif; ?>
+                </span>
             </p>
         </header>
         <div class="hqs-content">
+            <?php the_content(); ?>
             <h3>Contact details</h3>
             <p class="phone">+234 709 84123 789</p>
             <p class="email">

@@ -8,7 +8,20 @@
                     <span class="hashtag">#JoinHandsWithLikeMinds</span>
                 </p>
             </article>
-            <a href="/join" class="nas-btn">Join us</a>
+            <?php
+                // Get the application status and links from ACF
+                $application_status = get_field('application_status', 'option');
+                $open_page_link = get_field('applications_open_link', 'option');
+                $closed_page_link = get_field('applications_closed_link', 'option');
+
+                // Set the link based on the selected status
+                if ($application_status == 'open') {
+                    $join_link = $open_page_link;
+                } else {
+                    $join_link = $closed_page_link;
+                }
+            ?>
+            <a href="<?php echo esc_url($join_link); ?>" class="nas-btn">Join us</a>
         </div>
     </div>
 </section>

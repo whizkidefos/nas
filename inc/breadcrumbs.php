@@ -58,13 +58,13 @@ function custom_breadcrumbs() {
 }
 
 // Add breadcrumbs before the content
-function add_breadcrumbs_before_content($content) {
-    if (!is_front_page()) {  // Exclude breadcrumbs on the homepage
-        $breadcrumbs = '<div class="breadcrumbs-wrapper">';
-        $breadcrumbs .= custom_breadcrumbs();  // Generate breadcrumbs
-        $breadcrumbs .= '</div>';
-        return $breadcrumbs . $content;  // Append the breadcrumbs to the content
-    }
-    return $content;
-}
-add_filter('the_content', 'add_breadcrumbs_before_content');
+// function add_breadcrumbs_before_content($content) {
+//     if (!is_front_page()) {  // Exclude breadcrumbs on the homepage
+//         $breadcrumbs = '<div class="breadcrumbs-wrapper">';
+//         $breadcrumbs .= custom_breadcrumbs();  // Generate breadcrumbs
+//         $breadcrumbs .= '</div>';
+//         return $breadcrumbs . $content;  // Append the breadcrumbs to the content
+//     }
+//     return $content;
+// }
+// add_filter('the_content', 'add_breadcrumbs_before_content');

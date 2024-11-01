@@ -77,11 +77,11 @@
                                     while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
                                         <li>
                                             <a href="<?php the_permalink(); ?>">
-                                                <?php if (has_post_thumbnail()) : ?>
+                                                <!-- </?php if (has_post_thumbnail()) : ?>
                                                     <div class="thumbnail">
-                                                        <?php the_post_thumbnail('thumbnail'); ?>
+                                                        </?php the_post_thumbnail('thumbnail'); ?>
                                                     </div>
-                                                <?php endif; ?>
+                                                </?php endif; ?> -->
                                                 <span><?php the_title(); ?></span>
                                             </a>
                                         </li>

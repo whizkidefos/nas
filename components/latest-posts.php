@@ -2,7 +2,7 @@
 
     <div class="uk-container">
         <div class="bento-grid-container">
-            <h2 class="section-title">Latest Article / Press Releases</h2>
+            <h2 class="section-title uk-text-center">Press Releases</h2>
 
             <div class="bento-grid">
                 <?php
