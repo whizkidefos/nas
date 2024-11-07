@@ -35,10 +35,10 @@
                             </div>
 
                             <!-- Post Meta Data -->
-                            <div class="post-meta">
-                                <span>Posted on: <?php echo get_the_date(); ?></span> | 
-                                <span>By: <?php the_author(); ?></span>
-                            </div>
+                            <!-- <div class="post-meta">
+                                <span>Posted on: </?php echo get_the_date(); ?></span> | 
+                                <span>By: </?php the_author(); ?></span>
+                            </div> -->
 
                             <!-- Previous/Next Post Links -->
                             <div class="post-navigation">

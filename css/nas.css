@@ -1471,6 +1471,179 @@ footer .footer-logo img {
   }
 }
 
+/* Archive Grid Container */
+.archive-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Archive Card */
+.archive-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.archive-card:hover {
+  transform: scale(1.05);
+}
+
+/* Archive Card Link */
+.archive-card-link {
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image and Overlay Styling */
+.archive-card-image {
+  flex-grow: 1;
+  position: relative;
+  height: 300px; /* Adjust for desired height */
+  overflow: hidden;
+}
+
+.archive-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.archive-card-image .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay for legibility */
+  transition: opacity 0.3s ease;
+}
+
+.archive-card:hover .archive-card-image img {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Title Styling (Initially Visible) */
+.archive-card-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 1.2rem;
+  z-index: 2;
+  transition: opacity 0.3s ease;
+}
+
+.archive-card-title h3 {
+  color: #f8f8f8;
+  font-size: 1.2rem;
+  margin: 0;
+  line-height: 1.2;
+  padding: 10px 15px;
+}
+
+/* Excerpt Styling (Initially Hidden) */
+.archive-card-excerpt {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Hover Effects */
+.archive-card:hover .archive-card-title {
+  opacity: 0; /* Hide title on hover */
+}
+
+.archive-card:hover .archive-card-excerpt {
+  opacity: 1; /* Show excerpt on hover */
+}
+
+.archive-card:hover .overlay {
+  opacity: 0.7; /* Slightly darken overlay on hover */
+}
+
+/* Archive Pagination Container */
+.pagination-container {
+  text-align: center;
+  margin: 40px 0;
+  padding: 2rem 0;
+}
+
+/* Pagination List */
+.pagination {
+  display: inline-flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Archive Pagination Items */
+.pagination-item {
+  margin: 0 5px;
+  /* Hover effect */
+  /* Active Page Styling */
+  /* Previous and Next Button Styling */
+}
+.pagination-item a, .pagination-item span {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #333;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.pagination-item a:hover {
+  background-color: #96040D;
+  color: #fff;
+}
+.pagination-item .current {
+  background-color: #96040D;
+  color: #fff;
+  font-weight: bold;
+  pointer-events: none; /* Disable click on current page */
+}
+.pagination-item .prev, .pagination-item .next {
+  font-weight: bold;
+  color: #96040D;
+  background-color: transparent;
+}
+.pagination-item .prev:hover, .pagination-item .next:hover {
+  background-color: #96040D;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .pagination-item a, span {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
 .single-event-thumbnail-container {
   position: relative;
 }
@@ -1802,6 +1975,11 @@ section.single-post {
   color: #333;
   display: flex;
   align-items: center;
+  transition: 350ms;
+}
+.recent-posts li a:hover {
+  color: #96040D;
+  transform: translateX(5px);
 }
 
 .recent-posts .thumbnail {
@@ -1824,6 +2002,10 @@ section.single-post {
 
 .category-list li {
   margin-bottom: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.category-list li:hover {
+  transform: translateX(5px);
 }
 
 .category-list li a {
@@ -1831,10 +2013,6 @@ section.single-post {
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s ease;
-}
-.category-list li a:hover {
-  color: #640309;
-  transform: translateX(5px);
 }
 
 .countries {
