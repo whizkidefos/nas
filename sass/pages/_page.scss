@@ -2,10 +2,10 @@
   background: $nasRed;
   color: white;
   padding: 1rem;
-  text-align: center;
+  text-align: left;
   margin-bottom: 1rem;
   width: 100%;
-  height: 350px;
+  height: 250px;
 
   display: flex;
   justify-content: center;
@@ -22,9 +22,13 @@
   background: $nasWhite;
   padding: 3rem 0;
 
+  a {
+    color: $nasRed;
+  }
+
   .uk-container {
     background: white;
     margin: 2rem auto;
-    padding: 1rem;
+    padding: 3rem 2rem;
   }
 }

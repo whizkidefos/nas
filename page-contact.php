@@ -1,5 +1,11 @@
 <?php get_header(); ?>
 
+<header class="default-page-header">
+    <div class="uk-container">
+        <h1><?php the_title(); ?></h1>
+    </div>
+</header>
+
 <section class="contact-page">
     <div class="uk-container">
         <?php if (function_exists('custom_breadcrumbs')) custom_breadcrumbs(); ?>

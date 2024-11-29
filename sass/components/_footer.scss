@@ -4,11 +4,33 @@ footer {
     background-color: $nasWhite;
     border-top: 1px solid #ddd;
     color: #666;
-    padding: 1rem;
+    padding: 2rem 0;
     text-align: center;
+
+    h4 {
+        color: $nasBlack;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
 
     .footer-logo img {
         width: 200px;
+    }
+
+    small {
+        color: $nasBlack;
+        display: block;
+        font-size: 0.8rem;
+        margin-top: 1rem;
+    }
+}
+
+.footer-mission {
+    text-align: left !important;
+
+    @media (max-width: 960px) {
+        text-align: center !important;
     }
 }
 
@@ -45,6 +67,57 @@ footer {
         &:hover {
             color: $nasRed;
             text-decoration: none;
+        }
+    }
+}
+
+.useful-links {
+    text-align: left !important;
+
+    @media (max-width: 960px) {
+        text-align: center !important;
+    }
+
+    a {
+        color: $nasRed;
+        display: block;
+        margin: 0 10px;
+        transition: 350ms;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer-videos {
+    margin-top: 15px;
+
+    iframe {
+        border: 0;
+        border-radius: 10px;
+        height: 130px;
+        width: 100%;
+
+        @media (max-width: 960px) {
+            height: 210px;
+        }
+    }
+}
+
+.footer-quick-links {
+    h4 {
+        display: block;
+    }
+    a {
+        color: $nasRed;
+        font-size: 14px;
+        position: relative;
+        text-decoration: underline;
+        transition: 350ms;
+
+        &:hover {
+            color: $nasBlack;
         }
     }
 }

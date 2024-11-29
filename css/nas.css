@@ -347,11 +347,32 @@ footer {
   background-color: #f8f8f8;
   border-top: 1px solid #ddd;
   color: #666;
-  padding: 1rem;
+  padding: 2rem 0;
   text-align: center;
+}
+footer h4 {
+  color: #1C1C1B;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 footer .footer-logo img {
   width: 200px;
+}
+footer small {
+  color: #1C1C1B;
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+}
+
+.footer-mission {
+  text-align: left !important;
+}
+@media (max-width: 960px) {
+  .footer-mission {
+    text-align: center !important;
+  }
 }
 
 .footer-logo-links {
@@ -385,6 +406,53 @@ footer .footer-logo img {
 .footer-socials a:hover {
   color: #96040D;
   text-decoration: none;
+}
+
+.useful-links {
+  text-align: left !important;
+}
+@media (max-width: 960px) {
+  .useful-links {
+    text-align: center !important;
+  }
+}
+.useful-links a {
+  color: #96040D;
+  display: block;
+  margin: 0 10px;
+  transition: 350ms;
+}
+.useful-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-videos {
+  margin-top: 15px;
+}
+.footer-videos iframe {
+  border: 0;
+  border-radius: 10px;
+  height: 130px;
+  width: 100%;
+}
+@media (max-width: 960px) {
+  .footer-videos iframe {
+    height: 210px;
+  }
+}
+
+.footer-quick-links h4 {
+  display: block;
+}
+.footer-quick-links a {
+  color: #96040D;
+  font-size: 14px;
+  position: relative;
+  text-decoration: underline;
+  transition: 350ms;
+}
+.footer-quick-links a:hover {
+  color: #1C1C1B;
 }
 
 .bannerSwiper {
@@ -674,7 +742,7 @@ footer .footer-logo img {
 
 .nas-intro {
   width: 100%;
-  height: 700px;
+  height: 800px;
   position: relative;
   z-index: -1;
   background-attachment: fixed;
@@ -701,6 +769,8 @@ footer .footer-logo img {
 }
 .nas-intro-content h5 {
   color: #FFDD00;
+  font-size: 22px;
+  font-weight: 600;
   margin: 0;
   letter-spacing: 7px;
 }
@@ -792,15 +862,15 @@ footer .footer-logo img {
 /* Keyframes for the slideshow */
 @keyframes slideshow {
   0% {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url("../images/original15.jpeg") no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url("../images/original15.jpeg") no-repeat center center/cover;
     opacity: 1;
   }
   50% {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url("../images/nas-slide-01.jpeg") no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url("../images/nas-slide-01.jpeg") no-repeat center center/cover;
     opacity: 1;
   }
   100% {
-    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url("../images/nas-slide-00.jpeg") no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url("../images/nas-slide-00.jpeg") no-repeat center center/cover;
     opacity: 1;
   }
 }
@@ -848,7 +918,7 @@ footer .footer-logo img {
 }
 
 #impact-numbers {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/nas-slide-00.jpg") no-repeat center center/cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("../images/nas-slide-00.jpg") no-repeat center center/cover;
   background-attachment: fixed;
   width: 100%;
   height: auto;
@@ -2077,6 +2147,15 @@ section.single-post {
 .contact-page .map-box {
   border: 10px solid #f8f8f8;
 }
+.contact-page a {
+  color: #96040D;
+}
+
+form.fluent_form_1 .ff-btn-submit:not(.ff_btn_no_style) {
+  background-color: #96040D !important;
+  color: #f8f8f8 !important;
+  border-radius: 30px !important;
+}
 
 .enrolment-page-header {
   background: #96040D;
@@ -2144,10 +2223,10 @@ section.single-post {
   background: #96040D;
   color: white;
   padding: 1rem;
-  text-align: center;
+  text-align: left;
   margin-bottom: 1rem;
   width: 100%;
-  height: 350px;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2162,10 +2241,13 @@ section.single-post {
   background: #f8f8f8;
   padding: 3rem 0;
 }
+.default-page-content a {
+  color: #96040D;
+}
 .default-page-content .uk-container {
   background: white;
   margin: 2rem auto;
-  padding: 1rem;
+  padding: 3rem 2rem;
 }
 
 .page-not-found {

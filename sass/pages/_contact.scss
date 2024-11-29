@@ -4,4 +4,14 @@
     .map-box {
         border: 10px solid $nasWhite;
     }
+
+    a {
+        color: $nasRed;
+    }
+}
+
+form.fluent_form_1 .ff-btn-submit:not(.ff_btn_no_style) {
+    background-color: $nasRed !important;
+    color: $nasWhite !important;
+    border-radius: 30px !important;
 }
