@@ -1,0 +1,113 @@
+/* Base Styling */
+body.wp-admin {
+    background: radial-gradient(circle, #1f1f2e, #181824);
+    color: #eaeaea; /* Light gray text for better legibility */
+}
+
+#wpwrap {
+    background-color: #1f1f2e;
+}
+
+/* Top Bar */
+#wpadminbar {
+    background-color: #282843;
+    color: #ffffff;
+}
+
+#wpadminbar .ab-item, #wpadminbar a.ab-item {
+    color: #eaeaea;
+    font-weight: 600; /* Bold for better readability */
+}
+
+#wpadminbar .ab-item:hover {
+    color: #4caf50; /* Accent hover effect */
+}
+
+/* Sidebar */
+#adminmenu, #adminmenu .wp-submenu, #adminmenuback, #adminmenuwrap {
+    background-color: #282843; /* Slightly brighter for contrast */
+}
+
+#adminmenu a {
+    color: #c4c4c4; /* Light gray for better readability */
+    font-size: 14px; /* Larger font size for readability */
+    letter-spacing: 0.5px; /* Slight spacing for modern feel */
+}
+
+#adminmenu li.menu-top:hover, #adminmenu li.opensub>a.menu-top {
+    background-color: #333354;
+    color: #ffffff;
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu {
+    background-color: #333354;
+}
+
+#adminmenu .current a.menu-top {
+    background-color: #4caf50; /* Green for active menu */
+    color: #ffffff;
+}
+
+/* Buttons */
+.wp-core-ui .button-primary {
+    background-color: #4caf50;
+    border-color: #4caf50;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.wp-core-ui .button-primary:hover {
+    background-color: #388e3c;
+    border-color: #388e3c;
+}
+
+/* Dashboard Widgets */
+.postbox {
+    background-color: #2d2d42;
+    border: 1px solid #393960;
+    color: #ffffff;
+}
+
+.postbox h2 {
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.postbox-container .meta-box-sortables.ui-sortable .postbox:hover {
+    border-color: #4caf50;
+}
+
+/* Table Styling */
+.wp-list-table th, .wp-list-table td {
+    color: #2d2d42;
+}
+
+.wp-list-table a {
+    color: #4caf50;
+}
+
+.wp-list-table a:hover {
+    color: #388e3c;
+    text-decoration: underline;
+}
+
+.subsubsub a .count, .subsubsub a.current .count {
+    color: #d63638 !important;
+    font-weight: 400;
+}
+
+#dashboard_quick_press .drafts h1,
+#dashboard_quick_press .drafts h2,
+#dashboard_quick_press .drafts h3,
+#dashboard_quick_press .drafts h4,
+#dashboard-widgets .inside h3 {
+    color: #4caf50;
+}
+
+.wrap h1.wp-heading-inline {
+    display: inline-block;
+    margin-right: 5px;
+    color: #388e3c;
+}

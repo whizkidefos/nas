@@ -110,3 +110,38 @@ function search_knowledge_base($query) {
     }
 }
 
+// Custom Admin Styles & Scripts
+function custom_admin_styles() {
+    wp_enqueue_style('custom-admin-css', get_template_directory_uri() . '/css/admin-custom.css');
+}
+add_action('admin_enqueue_scripts', 'custom_admin_styles');
+
+function custom_admin_scripts() {
+    wp_enqueue_script('chartjs', 'https://cdn.jsdelivr.net/npm/chart.js', array(), null, true);
+    wp_enqueue_script('custom-admin-js', get_template_directory_uri() . '/js/admin-custom.js', array('chartjs'), null, true);
+}
+add_action('admin_enqueue_scripts', 'custom_admin_scripts');
+
+function add_dashboard_chart_widget() {
+    wp_add_dashboard_widget('custom_chart_widget', 'Website Analytics', 'render_dashboard_chart_widget');
+}
+
+function render_dashboard_chart_widget() {
+    echo '<canvas id="adminChart" style="width: 100%; height: 300px;"></canvas>';
+}
+
+add_action('wp_dashboard_setup', 'add_dashboard_chart_widget');
+
+function custom_admin_logo() {
+    echo '
+    <style>
+        #wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/NAS_Skull_Crossed.png) !important;
+            background-size: contain;
+            color: rgba(0, 0, 0, 0);
+        }
+    </style>';
+}
+add_action('admin_head', 'custom_admin_logo');
+
+
